@@ -1,0 +1,14 @@
+<div>
+  <div>
+    <app-navigation-bar></app-navigation-bar>
+  </div>
+
+  <div class="productsContainer">
+
+    <div class="product" *ngFor="let product of productList">
+      <app-shop-item [product]="product"></app-shop-item>
+    </div>
+
+  </div>
+
+</div>

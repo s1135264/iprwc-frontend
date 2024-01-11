@@ -1,0 +1,82 @@
+.createAccountWindow{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.createAccountWidget{
+  border: #ffa64f 1vmin solid;
+  border-radius: 10vmin;
+  padding: 3vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vmin;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media only screen and (max-width: 400px) {
+  .createAccountWidget{
+    width: 80%;
+  }
+}
+
+.spacer{
+  height: 2vmin;
+}
+
+.logo{
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alignContentToCenter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.password-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.passwordField{
+  width: 80%;
+}
+
+.textInputField{
+  width: 100%;
+}
+
+.showPasswordCheckbox{
+  height: 2cap;
+  width: 2cap;
+}
+
+.date-input{
+  max-width: 100vmin;
+}
+
+.warning{
+  color: red;
+}
+
+.login-button-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.login-button{
+  width: 45%;
+  padding: 1vmin;
+  background-color: #f7ca00;
+  border-radius: 1vmin;
+}

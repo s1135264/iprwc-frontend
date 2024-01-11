@@ -1,0 +1,111 @@
+<div class="createAccountWindow">
+  <div class="createAccountWidget">
+
+    <div>
+      <a class="alignContentToCenter" routerLink="/dashboard">
+        <img class="logo" src="assets/img/moneyzgone.png" alt="Logo">
+      </a>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div>
+      <p>Sign up for an account</p>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div>
+      <p>First name:</p>
+    </div>
+
+    <div class="text-input-container">
+      <input class="textInputField" type="text" name="firstName" placeholder="First name" required [(ngModel)]="firstName">
+    </div>
+
+    <div class="spacer"></div>
+
+    <div>
+      <p>Last name:</p>
+    </div>
+
+    <div class="text-input-container">
+      <input class="textInputField" type="text" name="lastName" placeholder="Last name" required [(ngModel)]="lastName">
+    </div>
+
+    <div class="spacer"></div>
+
+    <div>
+      <p>Email:</p>
+    </div>
+
+    <div class="text-input-container">
+      <input class="textInputField" type="text" name="email" placeholder="Email" required [(ngModel)]="email">
+    </div>
+
+    <div class="spacer"></div>
+
+    <div>
+      <p>Phone number:</p>
+    </div>
+
+    <div class="text-input-container">
+      <input class="textInputField" type="text" name="phoneNumber" placeholder="Phone number" required [(ngModel)]="phoneNumber">
+    </div>
+
+    <div class="spacer"></div>
+
+    <div>
+      <p>date of birth:</p>
+    </div>
+
+    <div>
+      <input class="date-input" type="date" name="dateOfBirth" placeholder="Date of birth" required [(ngModel)]="dateOfBirth">
+    </div>
+
+    <div class="spacer"></div>
+
+    <div>
+      <p>Username:</p>
+    </div>
+
+    <div class="text-input-container">
+      <input class="textInputField" type="text" name="username" placeholder="Username" required [(ngModel)]="username">
+    </div>
+
+    <div class="spacer"></div>
+
+    <div>
+      <p>Password:</p>
+    </div>
+
+    <div class="password-container">
+      <input class="passwordField" type="{{showPasswordStyling1}}" name="password" placeholder="Password" required [(ngModel)]="password1">
+      <input class="showPasswordCheckbox" type="checkbox" (click)="toggleShowPassword1()">
+    </div>
+
+    <div class="spacer"></div>
+
+    <div>
+      <p>Confirm password:</p>
+    </div>
+
+    <div class="password-container">
+      <input class="passwordField" type="{{showPasswordStyling2}}" name="password2" placeholder="Confirm password" required [(ngModel)]="password2">
+      <input class="showPasswordCheckbox" type="checkbox" (click)="toggleShowPassword2()">
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="login-button-container">
+      <button class="login-button" (click)="createAccountAttempt()">Continue</button>
+    </div>
+
+    <div class="warning" [style]="warningStyle">
+      <div class="spacer"></div>
+      <p>{{warning}}</p>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.productsContainer{
+  padding: 4vmin;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product{
+  padding: 1vmin;
+}
+

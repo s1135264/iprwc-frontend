@@ -1,0 +1,35 @@
+<div class="nav-bar">
+
+  <div class="WebsiteLogoFull">
+    <a routerLink="/dashboard">
+      <img class="mainLogo" src="assets/img/moneyzgone.png" alt="MainLogo">
+    </a>
+  </div>
+  <div class="lineBreaker"></div>
+  <div class="search-container">
+    <input class="search-bar" type="text" (keydown.enter)="onSearchButtonClick()" placeholder="Search..." [(ngModel)]="searchBar">
+
+    <div>
+      <button (click)="onSearchButtonClick()">
+        <img class="search-button" src="assets/img/magGlass.png" alt="Search">
+      </button>
+    </div>
+
+  </div>
+  <div class="lineBreaker"></div>
+
+  <div class="options">
+    <div>
+      <a routerLink="/login-page">
+        <img class="cart-button" src="assets/img/{{ loginIcon }}.png" alt="loginIcon">
+      </a>
+    </div>
+    <div class="lineBreaker"></div>
+    <div>
+      <a class="cart-button" routerLink="/cart">
+        <img class="cart-button" src="assets/img/cart.png" alt="cart">
+      </a>
+    </div>
+  </div>
+
+</div>

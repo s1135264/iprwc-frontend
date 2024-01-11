@@ -1,0 +1,28 @@
+<div class="product-widget">
+
+  <div (click)="previewProduct()">
+
+    <div class="product-img-container">
+      <img class="product-img" src="{{product.productImageURL}}" alt="product image">
+    </div>
+    <div class="product-name">
+      <p>name: {{product.productName}}</p>
+    </div>
+    <div class="product-description">
+      <p>{{product.productDescription}}</p>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="buy-bar" (click)="addToCart()">
+    <div class="product-price">
+      <p>${{product.productPrice}}</p>
+    </div>
+    <div class="product-cart-button">
+      <p>Add to cart</p>
+    </div>
+  </div>
+
+
+</div>

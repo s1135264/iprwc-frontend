@@ -1,0 +1,116 @@
+.login-window{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10rem;
+}
+
+
+
+.login-widget{
+  border: 1vmin #ffa64f solid;
+  border-radius: 10vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3vmin;
+  width: 50vmin;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+@media only screen and (max-width: 400px) {
+  .login-widget{
+    width: 80%;
+  }
+}
+
+.logo{
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alignContentToCenter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spacer{
+  height: 2vmin;
+}
+
+.extra-login-options{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin: 3vmin;
+}
+
+@media screen and (max-width: 400px) {
+  .extra-login-options{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.warning{
+  color: red;
+}
+
+.login-button-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.login-button{
+  width: 45%;
+  padding: 1vmin;
+  background-color: #f7ca00;
+  border-radius: 1vmin;
+}
+
+.username-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 60%;
+  align-items: center;
+}
+
+.password-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 60%;
+  align-items: center;
+}
+
+.showPasswordCheckbox{
+  height: 2cap;
+  width: 2cap;
+}
+
+.passwordField{
+  width: 70%;
+}
+
+.usernameField{
+  width: 80%;
+}
+
+@media screen and (max-width: 400px) {
+  .username-container{
+    width: 95%;
+  }
+  .password-container{
+    width: 98%;
+  }
+}

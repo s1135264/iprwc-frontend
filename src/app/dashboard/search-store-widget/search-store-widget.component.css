@@ -1,0 +1,16 @@
+
+.banner{
+  border: 0.1vmin solid black;
+  border-radius: 4vmin 4vmin 0vmin 0vmin;
+  height: 15vmin;
+  background: url(/assets/img/groupOfPeople.jpg) no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+.itemInfo{
+  border: 0.1vmin solid black;
+  border-radius: 0vmin 0vmin 4vmin 4vmin;
+  min-height: 10vmin;
+  padding: 1vmin;
+}

@@ -1,0 +1,60 @@
+
+
+<div class="login-window">
+
+
+  <div class="login-widget">
+    <div>
+      <a class="alignContentToCenter" routerLink="/dashboard">
+        <img class="logo" src="assets/img/moneyzgone.png" alt="Logo">
+      </a>
+    </div>
+    <div class="spacer"></div>
+    <div>
+      <h3>Inloggen:</h3>
+    </div>
+    <div class="spacer"></div>
+    <div>
+      <p>Username:</p>
+    </div>
+    <div class="username-container">
+      <input class="usernameField" type="text" placeholder="Username.." [(ngModel)]="username">
+    </div>
+    <div class="spacer"></div>
+    <div>
+      <p>Password:</p>
+    </div>
+    <div class="password-container">
+      <input class="passwordField" type="{{showPasswordStyling}}" placeholder="Password.." [(ngModel)]="password">
+      <input class="showPasswordCheckbox" type="checkbox" (click)="toggleShowPassword()">
+    </div>
+
+    <div class="spacer"></div>
+    <div class="login-button-container">
+      <button class="login-button" (click)="loginAtempt()">Continue</button>
+    </div>
+
+    <div class="warning" [style]="warningStyle">
+      <div class="spacer"></div>
+      <p>{{warning}}</p>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="extra-login-options">
+      <div>
+        <a routerLink="/login-page/reset">
+          Forgot password
+        </a>
+      </div>
+      <div class="spacer"></div>
+      <div>
+        <a routerLink="./create-account">
+          Make account
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
