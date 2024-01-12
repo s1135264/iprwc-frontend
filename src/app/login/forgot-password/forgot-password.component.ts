@@ -25,7 +25,7 @@ export class ForgotPasswordComponent {
       return;
     }
 
-    this.message = this.email + ' has been sent a reset link.';
+    this.message = this.email + ' will recieve an email within 3 to 5 business months.';
     this.waringStyle = 'display: contents; color: green;';
   }
 
