@@ -58,7 +58,7 @@ export class LoginPageComponent {
 
     this.http.post(url, data).subscribe((response) =>{
       //save cookies
-      this.cookie.set("sessionToken", response.toString());
+      this.cookie.set("token", response.toString());
       // console.log("Session Token: " + this.cookie.get("sessionToken"));
       window.location.href = "/dashboard"
     }, (error) => {
