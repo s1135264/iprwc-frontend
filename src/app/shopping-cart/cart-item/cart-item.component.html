@@ -1,1 +1,23 @@
-<p>cart-item works!</p>
+<div class="product-container">
+
+  <div class="img-container">
+    <img src="{{ productImg }}" alt="product image" class="image">
+  </div>
+  <div class="info-container">
+    <div>
+      <p>Product: {{ productName }}</p>
+    </div>
+    <div>
+      <p>Price: {{ productPrice }}</p>
+    </div>
+    <div>
+      <p>Amount in cart: {{ productAmount }}</p>
+    </div>
+  </div>
+
+  <div class="remove-button">
+    <button class="remove-btn" (click)="removeFromCart(productUuid)">Remove</button>
+  </div>
+
+
+</div>
