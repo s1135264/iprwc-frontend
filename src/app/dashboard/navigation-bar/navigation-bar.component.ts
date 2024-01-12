@@ -41,12 +41,42 @@ export class NavigationBarComponent {
       );
   }
 
+  endpointValidateAccount = "api/v1/account/validate"
   checkLoginStatus(){
 
     let token = this.cookie.get("token");
     if(token.length > 0){
-      this.loginIcon = "login";
-      this.loginIconRoute = "/dashboard";
+
+
+      //validate with endpoint
+      let url = this.baseUrl + this.endpointValidateAccount;
+      let data = token;
+      let isValid;
+      // console.log(data);
+
+      this.http.post(url, data).subscribe((response) =>{
+        console.log(response);
+        isValid = response.toString();
+        isValid = isValid.toLowerCase();
+
+        if (isValid === "true"){
+          this.loginIcon = "login";
+          this.loginIconRoute = "/dashboard";
+          return;
+        } else {
+          this.loginIcon = "logout";
+          this.loginIconRoute = "/login-page";
+        }
+
+      } , (error) => {
+        console.log(error);
+        // this.cookie.delete("token");
+        // this.checkLoginStatus();
+      });
+
+
+
+
     } else {
       this.loginIcon = "logout";
       this.loginIconRoute = "/login-page";
@@ -62,8 +92,7 @@ export class NavigationBarComponent {
       //delete session from database
       let url = this.baseUrl + this.endpointLogoutAccount;
       let data = this.cookie.get("token");
-      // data = '"' + data + '"';
-      console.log(data);
+      // console.log(data);
 
       this.http.post(url, data).subscribe((response) =>{
         console.log(response);
