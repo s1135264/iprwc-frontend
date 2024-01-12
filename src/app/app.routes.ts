@@ -6,6 +6,7 @@ import {CartComponent} from "./shopping-cart/cart/cart.component";
 import {CreateAccountComponent} from "./login/create-account/create-account.component";
 import {ForgotPasswordComponent} from "./login/forgot-password/forgot-password.component";
 import {ShopComponent} from "./shopFront/shop/shop.component";
+import {SellerPageComponent} from "./adminPage/seller-page/seller-page.component";
 
 export const routes: Routes = [
   {path : '', component: DashboardPageComponent, title: 'Dashboard'},
@@ -20,6 +21,7 @@ export const routes: Routes = [
   {path : 'login-page/reset', component: ForgotPasswordComponent, title: 'Reset Password'},
   {path : 'cart', component: CartComponent, title: 'Cart'},
   {path : 'shop', component: ShopComponent, title: 'Shop'},
+  {path : 'seller', component: SellerPageComponent, title: 'Seller/Admin page'},
 
 
   {path : '**', component: NotFoundPageComponent, title: 'Page Not Found'}

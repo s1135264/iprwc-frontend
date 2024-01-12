@@ -1,0 +1,25 @@
+.product-container{
+  border: red 1px solid;
+  display: flex;
+  flex-direction: row;
+  margin: 1.5vmin;
+  padding: 0.5vmin;
+}
+
+.img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  max-height: 10vmin;
+  border: rgba(152, 148, 148, 0.25) 1px solid;
+  overflow: hidden;
+}
+
+.image{
+  width: 6vmin;
+}
+
+.info-container{
+  padding: 1vmin;
+}

@@ -1,1 +1,15 @@
-<p>cart works!</p>
+<div>
+  <app-navigation-bar></app-navigation-bar>
+
+  <div>
+
+    <div class="payment">
+      <p>pay here</p>
+    </div>
+
+    <div class="cart-items" *ngFor="let item of cart">
+      <app-cart-item [item]="item"></app-cart-item>
+    </div>
+
+  </div>
+</div>
