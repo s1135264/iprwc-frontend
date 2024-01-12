@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-create-account',
   standalone: true,
   imports: [
     RouterLink,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   templateUrl: './create-account.component.html',
   styleUrl: './create-account.component.css'
@@ -27,6 +30,9 @@ export class CreateAccountComponent {
   showPassword2 = false;
   showPasswordStyling1 = "password";
   showPasswordStyling2 = "password";
+
+  constructor(private http: HttpClient, private cookie: CookieService) {
+  }
 
   toggleShowPassword1() {
     this.showPassword1 = !this.showPassword1;
@@ -98,12 +104,46 @@ export class CreateAccountComponent {
       return;
     }
 
-    console.log("First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nEmail: " + this.email + "\nPhone Number: " + this.phoneNumber + "\nDate of Birth: " + this.dateOfBirth + "\nUsername: " + this.username + "\nPassword: " + this.password1 + "\nPassword2: " + this.password2);
-    window.location.href = "/dashboard"; //reroute to dashboard page if login is successful
+    // console.log("First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nEmail: " + this.email + "\nPhone Number: " + this.phoneNumber + "\nDate of Birth: " + this.dateOfBirth + "\nUsername: " + this.username + "\nPassword: " + this.password1 + "\nPassword2: " + this.password2);
+
+    this.submitAccount();
+
+    if (false){
+      window.location.href = "/dashboard"; //reroute to dashboard page if login is successful
+    }
   }
 
   showError() {
     this.warningStyle = "display: " + this.showWarning + ";";
+  }
+
+  baseUrl = "http://127.0.0.1:8080/"
+  endpointCreateAccount = "api/v1/account/create"
+  submitAccount(){
+    let url = this.baseUrl + this.endpointCreateAccount;
+
+    let data = {
+      firstName: this.firstName,
+      lastName: this.lastName,
+      email: this.email,
+      phoneNumber: this.phoneNumber,
+      stringOfBirth: this.dateOfBirth,
+      username: this.username,
+      password: this.password1
+    }
+
+
+    this.http.post(url, data).subscribe((response) => {
+      // this.warning = "Account created successfully!";
+      // this.showError();
+
+      window.location.href = "/login-page";
+    }, (error) => {
+      this.warning = "Something went wrong!";
+      this.showError();
+    });
+
+
   }
 
 }
