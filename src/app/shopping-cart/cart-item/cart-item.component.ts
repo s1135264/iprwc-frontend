@@ -22,6 +22,7 @@ export class CartItemComponent {
   productAmount:number = 0;
   productImg = "img";
   productToken = "token";
+  cartToken = "cartToken";
 
   correspondingProduct:any = null;
 
@@ -41,6 +42,7 @@ export class CartItemComponent {
       this.productAmount = this.amount;
       this.productImg = this.correspondingProduct[0].productImageURL;
       this.productToken = this.correspondingProduct[0].productToken;
+      this.cartToken = this.correspondingProduct[0].token;
 
       // console.log(this.correspondingProduct);
     } , 100);
@@ -62,9 +64,11 @@ export class CartItemComponent {
   removeFromCart(productUuid: string) {
     let url = this.baseUrl + "api/v1/cart/remove";
     let data = {
-      "productUuid": productUuid,
-      "token": this.cookie.get("token")
+      "cartUuid": this.cartToken,
+      "sessionUuid": this.cookie.get("token")
     }
+
+    console.log(data);
 
     this.http.post(url, data).subscribe((response) =>{
       // console.log(response);
