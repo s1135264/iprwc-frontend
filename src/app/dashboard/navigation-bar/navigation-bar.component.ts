@@ -55,7 +55,7 @@ export class NavigationBarComponent {
       // console.log(data);
 
       this.http.post(url, data).subscribe((response) =>{
-        console.log(response);
+        // console.log(response);
         isValid = response.toString();
         isValid = isValid.toLowerCase();
 
@@ -73,9 +73,6 @@ export class NavigationBarComponent {
         // this.cookie.delete("token");
         // this.checkLoginStatus();
       });
-
-
-
 
     } else {
       this.loginIcon = "logout";
@@ -95,7 +92,7 @@ export class NavigationBarComponent {
       // console.log(data);
 
       this.http.post(url, data).subscribe((response) =>{
-        console.log(response);
+        // console.log(response);
       } , (error) => {
         console.log(error);
       } );
@@ -107,6 +104,17 @@ export class NavigationBarComponent {
 
       this.navigateTo("/dashboard");
     }
+  }
+
+  onCartButtonClick(){
+    this.checkLoginStatus();
+
+    if (this.loginIcon == "login"){
+      window.location.href = "/cart";
+    } else {
+      window.location.href = "/login-page";
+    }
+
   }
 
 }
