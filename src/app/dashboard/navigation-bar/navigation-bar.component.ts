@@ -25,7 +25,8 @@ export class NavigationBarComponent {
 
   constructor(router : Router, private http: HttpClient, private cookie: CookieService) {
     this.router = router;
-    this.checkLoginStatus()
+    this.checkLoginStatus();
+    // this.checkIfSeller();
   }
 
   onSearchButtonClick(){
@@ -116,5 +117,50 @@ export class NavigationBarComponent {
     }
 
   }
+
+  adminButtonStyle = "none";
+  // adminButtonStyle = "display";
+
+
+  onAdminButtonClick(){
+    //if seller, go to seller page
+    window.location.href = "/seller";
+  }
+
+  endpointValidateSeller = "api/v1/account/role"
+  // checkIfSeller(){
+  //   //validate with endpoint
+  //   let url = this.baseUrl + this.endpointValidateSeller;
+  //   let token = this.cookie.get("token");
+  //   let data = {
+  //     "sessionUuid": token
+  //   };
+  //   let isValid;
+  //   console.log(data);
+  //
+  //   if (token.length == 0){
+  //     this.adminButtonStyle = "none";
+  //     return;
+  //   }
+  //
+  //   this.http.post(url, data).subscribe((response) =>{
+  //     // console.log(response);
+  //     isValid = response.toString();
+  //     isValid = isValid.toLowerCase();
+  //     console.log("is seller: " + isValid);
+  //
+  //     if (isValid === "true"){
+  //       this.adminButtonStyle = "display";
+  //       return;
+  //     } else {
+  //       this.adminButtonStyle = "none";
+  //       return;
+  //     }
+  //
+  //   } , (error) => {
+  //     // console.log(error);
+  //     this.adminButtonStyle = "none";
+  //   });
+  // }
 
 }
