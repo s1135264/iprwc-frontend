@@ -15,12 +15,12 @@ import {CookieService} from "ngx-cookie-service";
 export class DashboardLoginWidgetComponent {
 
 
-  baseUrl = "http://188.166.118.19:8080/";
+  baseUrl = "http://188.166.118.19:8080";
 
   constructor(private http: HttpClient, private cookie: CookieService) {
   }
 
-  endpointValidateAccount = "api/v1/account/validate"
+  endpointValidateAccount = "/api/v1/account/validate"
   checkLoginStatus(){
 
     let token = this.cookie.get("token");

@@ -81,8 +81,8 @@ export class NavigationBarComponent {
     }
   }
 
-  baseUrl = "http://188.166.118.19:8080/"
-  endpointLogoutAccount = "api/v1/account/logout"
+  baseUrl = "http://188.166.118.19:8080"
+  endpointLogoutAccount = "/api/v1/account/logout"
   onAccountButtonClick(){
     //delete cookies
     if (this.loginIcon == "login"){

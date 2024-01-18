@@ -48,8 +48,8 @@ export class CartItemComponent {
     } , 100);
   }
 
-  baseUrl = "http://188.166.118.19:8080/"
-  endpointProductSearchByUuid = "api/v1/product/uuid"
+  baseUrl = "http://188.166.118.19:8080"
+  endpointProductSearchByUuid = "/api/v1/product/uuid"
   getMatchingProduct(productUuid:string){
     let url = this.baseUrl + this.endpointProductSearchByUuid;
     let data = productUuid;

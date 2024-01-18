@@ -36,8 +36,8 @@ export class ShopItemComponent {
   }
 
 
-  baseUrl = "http://188.166.118.19:8080/"
-  endpointLoginAccount = "api/v1/cart"
+  baseUrl = "http://188.166.118.19:8080"
+  endpointLoginAccount = "/api/v1/cart"
   addToCart(){
     // console.log("Add product to cart: " + this.product.productName);
     //todo: add to cart

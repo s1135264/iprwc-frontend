@@ -29,8 +29,8 @@ export class CartComponent {
 
 
   //get cart from server with token
-  baseUrl = "http://188.166.118.19:8080/"
-  endpointGetCart = "api/v1/cart/get"
+  baseUrl = "http://188.166.118.19:8080"
+  endpointGetCart = "/api/v1/cart/get"
   getCart(){
     let url = this.baseUrl + this.endpointGetCart;
     let data = this.cookie.get("token");

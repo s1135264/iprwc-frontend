@@ -46,8 +46,8 @@ export class LoginPageComponent {
     }
   }
 
-  baseUrl = "http://188.166.118.19:8080/"
-  endpointLoginAccount = "api/v1/account/login"
+  baseUrl = "http://188.166.118.19:8080"
+  endpointLoginAccount = "/api/v1/account/login"
   submitCreds(){
     let url = this.baseUrl + this.endpointLoginAccount;
 
