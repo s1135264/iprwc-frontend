@@ -2,6 +2,7 @@ import {Component, Input, signal} from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
+import {WebsiteService} from "../../websiteService";
 
 @Component({
   selector: 'app-shop-item',
@@ -24,6 +25,9 @@ export class ShopItemComponent {
 //   "productQuantity": "10"
 // }
 
+  websiteService = new WebsiteService();
+  baseUrl = this.websiteService.getBaseUrl();
+
 
   constructor(private http: HttpClient, private cookie: CookieService) {
   }
@@ -36,7 +40,6 @@ export class ShopItemComponent {
   }
 
 
-  baseUrl = "http://188.166.118.19:8080"
   endpointLoginAccount = "/api/v1/cart"
   addToCart(){
     // console.log("Add product to cart: " + this.product.productName);

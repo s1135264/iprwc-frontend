@@ -3,6 +3,7 @@ import {RouterLink} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {CookieService} from "ngx-cookie-service";
+import {WebsiteService} from "../../websiteService";
 
 @Component({
   selector: 'app-create-account',
@@ -30,6 +31,9 @@ export class CreateAccountComponent {
   showPassword2 = false;
   showPasswordStyling1 = "password";
   showPasswordStyling2 = "password";
+
+  websiteService = new WebsiteService();
+  baseUrl = this.websiteService.getBaseUrl();
 
   constructor(private http: HttpClient, private cookie: CookieService) {
   }
@@ -117,7 +121,7 @@ export class CreateAccountComponent {
     this.warningStyle = "display: " + this.showWarning + ";";
   }
 
-  baseUrl = "http://188.166.118.19:8080"
+
   endpointCreateAccount = "/api/v1/account/create"
   submitAccount(){
     let url = this.baseUrl + this.endpointCreateAccount;

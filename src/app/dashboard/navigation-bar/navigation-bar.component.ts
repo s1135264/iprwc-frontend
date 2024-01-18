@@ -4,6 +4,7 @@ import {FormsModule} from "@angular/forms";
 import { Router } from '@angular/router';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
+import {WebsiteService} from "../../websiteService";
 
 @Component({
   selector: 'app-navigation-bar',
@@ -23,6 +24,9 @@ export class NavigationBarComponent {
   loginIconRoute = "/login-page";
   router : Router;
 
+  websiteService = new WebsiteService();
+  baseUrl = this.websiteService.getBaseUrl();
+
   constructor(router : Router, private http: HttpClient, private cookie: CookieService) {
     this.router = router;
     this.checkLoginStatus();
@@ -30,7 +34,7 @@ export class NavigationBarComponent {
   }
 
   onSearchButtonClick(){
-    //wait for 0.5 seconds before navigating to the shop page
+    //wait for before navigating to the shop page
     setTimeout(() => {
       this.navigateTo(this.shopRoute);
     }, 5);
@@ -42,7 +46,7 @@ export class NavigationBarComponent {
       );
   }
 
-  endpointValidateAccount = "api/v1/account/validate"
+  endpointValidateAccount = "/api/v1/account/validate"
   checkLoginStatus(){
 
     let token = this.cookie.get("token");
@@ -81,7 +85,7 @@ export class NavigationBarComponent {
     }
   }
 
-  baseUrl = "http://188.166.118.19:8080"
+
   endpointLogoutAccount = "/api/v1/account/logout"
   onAccountButtonClick(){
     //delete cookies

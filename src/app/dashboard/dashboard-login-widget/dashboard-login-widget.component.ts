@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
+import {WebsiteService} from "../../websiteService";
 
 @Component({
   selector: 'app-dashboard-login-widget',
@@ -14,8 +15,8 @@ import {CookieService} from "ngx-cookie-service";
 })
 export class DashboardLoginWidgetComponent {
 
-
-  baseUrl = "http://188.166.118.19:8080";
+  websiteService = new WebsiteService();
+  baseUrl = this.websiteService.getBaseUrl();
 
   constructor(private http: HttpClient, private cookie: CookieService) {
   }

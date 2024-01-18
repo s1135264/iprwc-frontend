@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {ShopItemComponent} from "../shop-item/shop-item.component";
 import {NgForOf} from "@angular/common";
+import {WebsiteService} from "../../websiteService";
 
 
 @Component({
@@ -20,8 +21,10 @@ import {NgForOf} from "@angular/common";
 export class ShopComponent {
   filter = "";
 
-  baseURL = 'http://188.166.118.19:8080';
-  getProductsURL = this.baseURL + '/api/v1/product';
+  websiteService = new WebsiteService();
+  baseUrl = this.websiteService.getBaseUrl();
+
+  getProductsURL = this.baseUrl + '/api/v1/product';
   productList:any = [];
 
 
@@ -30,16 +33,18 @@ export class ShopComponent {
   constructor(private router: Router) {
     //subscribe to router events
     this.router.events.subscribe((val) => {//todo:fix errors in console
-      this.filter = this.getQueryParams();
+      // this.filter = this.getQueryParams();
 
       //load products
-      this.getProducts(this.filter);
+      // this.getProducts(this.filter);
 
 
 
-      // setTimeout(() => {
-      //   console.log(this.productList);
-      // }, 500);
+      setTimeout(() => {
+        this.filter = this.getQueryParams();
+        this.getProducts(this.filter);
+        console.log(this.productList);
+      }, 50);
 
     });//todo:fix errors in console
   }

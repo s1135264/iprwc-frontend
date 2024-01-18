@@ -4,6 +4,7 @@ import {NgForOf} from "@angular/common";
 import {CartItemComponent} from "../cart-item/cart-item.component";
 import {CookieService} from "ngx-cookie-service";
 import {HttpClient} from "@angular/common/http";
+import {WebsiteService} from "../../websiteService";
 
 @Component({
   selector: 'app-cart',
@@ -19,6 +20,9 @@ import {HttpClient} from "@angular/common/http";
 export class CartComponent {
   cart:any = [];
 
+  websiteService = new WebsiteService();
+  baseUrl = this.websiteService.getBaseUrl();
+
 
   constructor(private http: HttpClient, private cookie: CookieService) {
 
@@ -29,7 +33,6 @@ export class CartComponent {
 
 
   //get cart from server with token
-  baseUrl = "http://188.166.118.19:8080"
   endpointGetCart = "/api/v1/cart/get"
   getCart(){
     let url = this.baseUrl + this.endpointGetCart;

@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CookieService} from "ngx-cookie-service";
+import {WebsiteService} from "../../websiteService";
 
 @Component({
   selector: 'app-cart-item',
@@ -26,6 +27,9 @@ export class CartItemComponent {
 
   correspondingProduct:any = null;
 
+  websiteService = new WebsiteService();
+  baseUrl = this.websiteService.getBaseUrl();
+
   constructor(private http: HttpClient, private cookie: CookieService) {
     //sleep for products to load
     setTimeout(() => {
@@ -48,7 +52,7 @@ export class CartItemComponent {
     } , 100);
   }
 
-  baseUrl = "http://188.166.118.19:8080"
+
   endpointProductSearchByUuid = "/api/v1/product/uuid"
   getMatchingProduct(productUuid:string){
     let url = this.baseUrl + this.endpointProductSearchByUuid;
@@ -62,7 +66,7 @@ export class CartItemComponent {
   }
 
   removeFromCart(productUuid: string) {
-    let url = this.baseUrl + "api/v1/cart/remove";
+    let url = this.baseUrl + "/api/v1/cart/remove";
     let data = {
       "cartUuid": this.cartToken,
       "sessionUuid": this.cookie.get("token")

@@ -3,6 +3,7 @@ import {RouterLink} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {CookieService} from "ngx-cookie-service";
+import {WebsiteService} from "../../websiteService";
 
 @Component({
   selector: 'app-login-page',
@@ -25,6 +26,9 @@ export class LoginPageComponent {
   showPassword = false;
   showPasswordStyling = "password";
 
+  websiteService = new WebsiteService();
+  baseUrl = this.websiteService.getBaseUrl();
+
 
   constructor(private http: HttpClient, private cookie: CookieService) {
   }
@@ -46,7 +50,7 @@ export class LoginPageComponent {
     }
   }
 
-  baseUrl = "http://188.166.118.19:8080"
+
   endpointLoginAccount = "/api/v1/account/login"
   submitCreds(){
     let url = this.baseUrl + this.endpointLoginAccount;

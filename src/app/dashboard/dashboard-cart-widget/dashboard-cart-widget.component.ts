@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {CookieService} from "ngx-cookie-service";
 import {HttpClient} from "@angular/common/http";
+import {WebsiteService} from "../../websiteService";
 
 @Component({
   selector: 'app-dashboard-cart-widget',
@@ -13,7 +14,8 @@ import {HttpClient} from "@angular/common/http";
   styleUrl: './dashboard-cart-widget.component.css'
 })
 export class DashboardCartWidgetComponent {
-  baseUrl = "http://188.166.118.19:8080";
+  websiteService = new WebsiteService();
+  baseUrl = this.websiteService.getBaseUrl();
 
   constructor(private http: HttpClient, private cookie: CookieService) {
   }

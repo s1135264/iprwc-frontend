@@ -7,6 +7,7 @@ import {
 } from "../dashboard-random-item-widget/dashboard-random-item-widget.component";
 import {DashboardCartWidgetComponent} from "../dashboard-cart-widget/dashboard-cart-widget.component";
 import {SearchStoreWidgetComponent} from "../search-store-widget/search-store-widget.component";
+import {WebsiteService} from "../../websiteService";
 
 @Component({
   selector: 'app-dashboard-page',
