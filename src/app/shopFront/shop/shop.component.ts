@@ -20,7 +20,7 @@ import {NgForOf} from "@angular/common";
 export class ShopComponent {
   filter = "";
 
-  baseURL = 'http://localhost:8080';
+  baseURL = 'http://188.166.118.19:8080/';
   getProductsURL = this.baseURL + '/api/v1/product';
   productList:any = [];
 

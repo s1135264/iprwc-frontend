@@ -15,7 +15,7 @@ import {CookieService} from "ngx-cookie-service";
 export class DashboardLoginWidgetComponent {
 
 
-  baseUrl = "http://127.0.0.1:8080/";
+  baseUrl = "http://188.166.118.19:8080/";
 
   constructor(private http: HttpClient, private cookie: CookieService) {
   }

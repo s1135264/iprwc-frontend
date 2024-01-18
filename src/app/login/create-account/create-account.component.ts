@@ -117,7 +117,7 @@ export class CreateAccountComponent {
     this.warningStyle = "display: " + this.showWarning + ";";
   }
 
-  baseUrl = "http://127.0.0.1:8080/"
+  baseUrl = "http://188.166.118.19:8080/"
   endpointCreateAccount = "api/v1/account/create"
   submitAccount(){
     let url = this.baseUrl + this.endpointCreateAccount;

@@ -13,7 +13,7 @@ import {HttpClient} from "@angular/common/http";
   styleUrl: './dashboard-cart-widget.component.css'
 })
 export class DashboardCartWidgetComponent {
-  baseUrl = "http://127.0.0.1:8080/";
+  baseUrl = "http://188.166.118.19:8080/";
 
   constructor(private http: HttpClient, private cookie: CookieService) {
   }
